@@ -45,18 +45,17 @@ public class MainActivity extends AppCompatActivity {
                 textResult.setText(Double.toString(result));
             }
         } catch (NumberFormatException e) {
+            // In case of Invalid Input we display nothing
             textResult.setText("");
         }
     }
 
     public void doSubtraction(View view) {
-        // Turn user inputs into Integers
         try {
             firstNumber = Double.parseDouble(firstInput.getText().toString());
             secondNumber = Double.parseDouble(secondInput.getText().toString());
             result = firstNumber - secondNumber;
 
-            // If user has not used decimals, we don't display them
             if (result % 1 == 0) {
 
                 textResult.setText(Integer.toString((int) result));
@@ -70,13 +69,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void doMultiplication(View view) {
-        // Turn user inputs into Integers
         try {
             firstNumber = Double.parseDouble(firstInput.getText().toString());
             secondNumber = Double.parseDouble(secondInput.getText().toString());
             result = firstNumber * secondNumber;
 
-            // If user has not used decimals, we don't display them
             if (result % 1 == 0) {
                 textResult.setText(Integer.toString((int) result));
             }
@@ -89,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void doDivision(View view) {
-        // Turn user inputs into Integers
         try {
             firstNumber = Double.parseDouble(firstInput.getText().toString());
             secondNumber = Double.parseDouble(secondInput.getText().toString());
@@ -100,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
                 result = firstNumber / secondNumber;
             }
 
-            // If user has not used decimals, we don't display them
             if (result % 1 == 0) {
 
                 textResult.setText(Integer.toString((int) result));
@@ -109,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
                 textResult.setText(String.format("%.2f", result));
             }
         } catch (NumberFormatException e) {
-            // In case invalid input, we print nothing
             textResult.setText("");
         }
     }
